@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #000;
+    font-family: 'Vollkorn', serif;
+}
+
+.a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+.a:hover {
+    background-color: #ff5b5b;
+    padding: 10px 5px;
+    color: #000;
+}
+
+h1 {
+    font-size: 5vw;
+    color: #6d0303;
+    text-shadow: .3vw .3vw rgb(241, 46, 88);
+    text-align: center;
+    margin: 1%;
+}
+
+h2 {
+    color: #86071c;
+}
+
+b {
+    color: #5e0d1f;
+}
+
+i {
+    color: #a7172a;
+}
+
+p {
+    font-size: 23px;
+}
+
+ul {
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.contenedor { /*Esta sección se encarga de darle los valores correspondientes a la grid del área*/
+    width: 95%;
+    margin: 20px auto;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 20vw;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: 
+    "header header header"
+    "contenido contenido img"
+    "contenido contenido img"
+    "contenido contenido img"
+    "footer footer footer";
+}
+
+.contenedor > div,
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .img,
+.contenedor .footer {
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.contenedor .header {
+    background: #852323;
+    color: #fff;
+    grid-area: header;
+}
+
+.contenedor .contenido {
+    grid-area: contenido;
+}
+
+.contenedor .footer {
+    background: #852323;
+    color: #fff;
+    grid-area: footer;
+    text-align: center;
+    font-size: 1vw;
+}
+
+.redes {
+    width: 3.2vw;
+}
+
+.redes2 {
+    width: 3vw;
+}
+
+/*Valores para adaptar la página a dispositivos de máximo 760px*/
+@media screen and (max-width: 760px) {
+    
+    .contenedor {
+        grid-template-areas: 
+        "header header header"
+        "contenido contenido contenido"
+        "img img img"
+        "footer footer footer";
+    }
+
+    h1{
+        font-size: 7vw;
+    }
+
+    .contenedor .img {
+        width: 14.5vw;
+        height: auto;
+    }
+
+    .contenedor .footer {
+        font-size: 2vw;
+    }
+
+    .redes {
+        width: 5.3vw;
+    }
+    
+    .redes2 {
+        width: 5vw;
+    }
+}
